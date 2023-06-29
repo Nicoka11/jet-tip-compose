@@ -45,12 +45,28 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun HeaderCard(title: String = "Total per person", value: Float = 12.0F) {
-    Surface(modifier = Modifier
-        .fillMaxWidth()
-        .height(IntrinsicSize.Min), color = MaterialTheme.colorScheme.secondary, shape = MaterialTheme.shapes.large) {
-        Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.padding(vertical = 24.dp)) {
-            Text(text = title, style = TextStyle(color = MaterialTheme.colorScheme.onSecondary), fontSize = 22.sp)
-            Text(text = "$$value", style = TextStyle(color = MaterialTheme.colorScheme.onSecondary), fontSize = 32.sp)
+    Surface(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(IntrinsicSize.Min),
+        color = MaterialTheme.colorScheme.secondary,
+        shape = MaterialTheme.shapes.large
+    ) {
+        Column(
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.padding(vertical = 24.dp)
+        ) {
+            Text(
+                text = title,
+                style = TextStyle(color = MaterialTheme.colorScheme.onSecondary),
+                fontSize = 22.sp
+            )
+            Text(
+                text = "$$value",
+                style = TextStyle(color = MaterialTheme.colorScheme.onSecondary),
+                fontSize = 32.sp
+            )
         }
     }
 }
