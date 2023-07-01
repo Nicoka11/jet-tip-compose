@@ -20,6 +20,10 @@ android {
         }
     }
 
+    applicationVariants.all { variant ->
+        variant.getRuntimeConfiguration().exclude group: 'com.google.code.findbugs', module: 'jsr305'
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -47,7 +51,7 @@ android {
 }
 
 dependencies {
-
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
     implementation 'androidx.activity:activity-compose:1.5.1'
@@ -63,4 +67,6 @@ dependencies {
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
+    // Icons
+    implementation "androidx.compose.material:material-icons-extended:1.4.3"
 }
