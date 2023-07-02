@@ -29,6 +29,7 @@ fun SegmentedButton(
 ) {
 
     Surface(
+        modifier = modifier,
         shape = MaterialTheme.shapes.extraLarge,
         border = BorderStroke(2.dp, MaterialTheme.colorScheme.primary),
     ) {
