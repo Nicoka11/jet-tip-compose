@@ -8,8 +8,8 @@ import androidx.compose.material.icons.rounded.AttachMoney
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
@@ -31,7 +31,7 @@ fun InputField(
     imeAction: ImeAction = ImeAction.Next,
     onAction: KeyboardActions = KeyboardActions.Default
 ) {
-    TextField(
+    OutlinedTextField(
         modifier = modifier
             .fillMaxWidth(),
         value = valueState.value,
