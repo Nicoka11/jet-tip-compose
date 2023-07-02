@@ -1,6 +1,5 @@
 package com.example.jettip.components
 
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -10,7 +9,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
@@ -24,6 +22,7 @@ import androidx.compose.ui.unit.sp
 fun InputField(
     modifier: Modifier = Modifier,
     valueState: MutableState<String>,
+    onValueChange: (String) -> Unit,
     label: String,
     enabled: Boolean,
     isSingleLine: Boolean,
@@ -32,12 +31,13 @@ fun InputField(
     onAction: KeyboardActions = KeyboardActions.Default
 ) {
     OutlinedTextField(
-        modifier = modifier
-            .fillMaxWidth(),
+        modifier = modifier,
         value = valueState.value,
-        colors = TextFieldDefaults.textFieldColors(containerColor = MaterialTheme.colorScheme.onPrimary),
         shape = MaterialTheme.shapes.small,
-        onValueChange = { valueState.value = it },
+        onValueChange = {
+            valueState.value = it
+            onValueChange(it)
+        },
         label = { Text(text = label) },
         leadingIcon = {
             Icon(

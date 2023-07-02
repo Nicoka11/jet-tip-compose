@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.jettip.app-mergeDebugResources-39:/values-v21/values-v21.xml",
+            "outputFile": "com.example.jettip.app-mergeDebugResources-43:/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\nicok\\.gradle\\caches\\transforms-3\\af4b7c5236c9ff872e815c327d77073f\\transformed\\core-1.8.0\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\nicok\\.gradle\\caches\\transforms-3\\39ffa539eee4636c1c411d9abdafd47b\\transformed\\core-1.9.0\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",

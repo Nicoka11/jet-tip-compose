@@ -8,6 +8,12 @@
         android:minSdkVersion="28"
         android:targetSdkVersion="33" />
 
+    <permission
+        android:name="com.example.jettip.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.jettip.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -33,16 +39,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="androidx.compose.ui.tooling.PreviewActivity"
+            android:name="androidx.activity.ComponentActivity"
             android:exported="true" />
         <activity
-            android:name="androidx.activity.ComponentActivity"
+            android:name="androidx.compose.ui.tooling.PreviewActivity"
             android:exported="true" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.example.jettip.androidx-startup"
             android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
             <meta-data
                 android:name="androidx.profileinstaller.ProfileInstallerInitializer"
                 android:value="androidx.startup" />
@@ -59,6 +71,12 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
             </intent-filter>
         </receiver>
     </application>
